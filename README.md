@@ -9,4 +9,4 @@ NestJS로 배우는 백엔드 프로그래밍
 
 ## 참조
 
-https://wikidocs.net/book/7059
+[NestJS로 배우는 백엔드 프로그래밍](https://wikidocs.net/book/7059)를 정리하며 Study
