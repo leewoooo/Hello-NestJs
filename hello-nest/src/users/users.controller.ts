@@ -7,6 +7,8 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  // payload를 이용하여 Client의 요청을 받을 수 있다.
+  // Client에서 RequestBody에 JSON형식으로 요청을 보내면 해당 객체에 바인딩해준다.
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
