@@ -1,10 +1,11 @@
 import { Controller, Get, Header, HttpCode, NotFoundException, Param, Post, Query, Req, Res, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Request, Response } from 'express';
+import { ServiceB } from './service-b';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService, private readonly serviceB: ServiceB) {}
 
   @Get('/hello')
   getHello(): string {
@@ -67,5 +68,10 @@ export class AppController {
   getRequest(@Req() req: Request) {
     console.log(req.headers);
     console.log(req.body);
+  }
+
+  @Get('/provider')
+  getProvider(){
+    this.serviceB.getHello();
   }
 }
